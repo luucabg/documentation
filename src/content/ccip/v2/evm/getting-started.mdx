@@ -262,6 +262,17 @@ sepolia = "ENTER_YOUR_SEPOLIA_RPC_URL_HERE"
 arbitrumSepolia = "ENTER_YOUR_ARBITRUM_SEPOLIA_RPC_URL_HERE"
 ```
 
+Run these read-only checks from the directory that contains `foundry.toml`.
+
+```bash filename="Terminal"
+cast chain-id --rpc-url sepolia
+cast chain-id --rpc-url arbitrumSepolia
+```
+
+The expected results are `11155111` for Ethereum Sepolia and `421614` for Arbitrum Sepolia. Correct the corresponding URL if its result differs. The send script uses the CCIP chain selectors from the [CCIP Directory](/ccip/directory).
+
+If you need RPC URLs, compare Sepolia plans in the [Ethereum API directory](https://eth.chain.love/toolbox/apis) and [Arbitrum API directory](https://arbitrum.chain.love/toolbox/apis). Use the URL that the provider documents for the intended testnet.
+
 </AnchoredAccordion>
 
 <AnchoredAccordion title="Set up the contracts" anchorId="foundry-contracts" number={2} depth={5}>
